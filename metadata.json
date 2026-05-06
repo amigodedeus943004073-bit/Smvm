@@ -1,0 +1,6 @@
+{
+  "name": "Gestão Financeira Pro",
+  "description": "Aplicativo para gestão de entradas, saídas, vendas e reserva salarial com estatísticas semanais e mensais.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

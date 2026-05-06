@@ -1,0 +1,40 @@
+{
+  "entities": {
+    "transaction": {
+      "title": "Transaction",
+      "description": "Records of income, expense, and sales.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "Owner of the transaction" },
+        "type": { "type": "string", "enum": ["income", "expense", "sale"], "description": "Type of transaction" },
+        "amount": { "type": "number", "description": "Transaction value" },
+        "description": { "type": "string", "description": "What was the transaction for" },
+        "category": { "type": "string", "description": "Category of the transaction (e.g., Alimentação, Vendas, etc.)" },
+        "date": { "type": "string", "format": "date-time", "description": "When it happened" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "type", "amount", "description", "category", "date"]
+    },
+    "userProfile": {
+      "title": "User Profile",
+      "description": "Settings for the user, including salary reserve.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "salaryReserve": { "type": "number", "description": "Target amount to reserve from monthly income" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "salaryReserve"]
+    }
+  },
+  "firestore": {
+    "transactions": {
+      "schema": "transaction",
+      "description": "User transactions"
+    },
+    "userProfiles": {
+      "schema": "userProfile",
+      "description": "User settings"
+    }
+  }
+}
